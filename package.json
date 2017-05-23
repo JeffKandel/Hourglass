@@ -11,7 +11,7 @@
     "dev": "webpack -w & nodemon --watch server -e js,html server/app.js",
     "build": "webpack --config webpack.production.config",
     "test": "eslint ./src/**/**.js",
-    "heroku-postbuild": "webpack --config ./webpack.production.config"
+    "heroku-postbuild": "webpack --config ./webpack.config"
   },
   "repository": {
     "type": "git",
