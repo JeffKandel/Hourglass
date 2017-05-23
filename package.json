@@ -34,7 +34,7 @@
     "redux-thunk": "^2.2.0",
     "socket.io": "^2.0.1",
     "webfontloader": "^1.6.27",
-    "webpack": "^2.2.0",
+    "webpack": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
