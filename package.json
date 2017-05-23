@@ -10,7 +10,8 @@
     "start": "node server/app.js",
     "dev": "webpack -w & nodemon --watch server -e js,html server/app.js",
     "build": "webpack --config webpack.production.config",
-    "test": "eslint ./src/**/**.js"
+    "test": "eslint ./src/**/**.js",
+    "heroku-postbuild": "webpack --config ./webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
