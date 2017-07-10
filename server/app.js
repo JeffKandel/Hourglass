@@ -69,6 +69,6 @@ io.on('connect', function(socket) {
 broadcastGameState(io)
 
 
-server.listen(3000, function() {
+server.listen(PROCESS.ENV.PORT||3000, function() {
   console.log('listening on port 3000')
 })
