@@ -21,6 +21,8 @@ const { updatePlayer, removePlayer, updateKeyHolder } = require('./reducer.js')
   // Store Dispatchers
   // const {updatePlayer, removePlayer} = require('./reducers/players.js')
 
+const port = process.env.PORT || 3000
+
 // Import helper functions
 // const {startGame, endGame} = require('./engine/updateClientLoop.js')
 
@@ -69,6 +71,6 @@ io.on('connect', function(socket) {
 broadcastGameState(io)
 
 
-server.listen(PROCESS.ENV.PORT||3000, function() {
+server.listen(port, function() {
   console.log('listening on port 3000')
 })
