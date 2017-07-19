@@ -1,16 +1,16 @@
 import Phaser from 'phaser'
 import { centerGameObjects } from '../utils'
 import GameMenu from './MainMenu.js'
+import store from '../store.js'
 
 export default class extends Phaser.State {
   init () {}
-
 
   preload () {
     this.loaderBg = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBg')
     this.loaderBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBar')
     centerGameObjects([this.loaderBg, this.loaderBar])
-
+    this.game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
     this.load.setPreloadSprite(this.loaderBar)
     //
     // load your assets
@@ -42,7 +42,6 @@ export default class extends Phaser.State {
     this.load.spritesheet('door', '/assets/images/door.png', 42, 66)
     this.load.spritesheet('icon:key', '/assets/images/key_icon.png', 34, 30)
 
-    this.load.audio('sfx:background', 'assets/audio/finaltrimmed.ogg')
     this.load.audio('sfx:jump', 'assets/audio/jump.wav')
     this.load.audio('sfx:coin', 'assets/audio/coin.wav')
     this.load.audio('sfx:stomp', 'assets/audio/stomp.wav')
@@ -53,7 +52,7 @@ export default class extends Phaser.State {
   }
 
   create () {
-       this.state.start('Game')
+       this.state.start('MainMenu')
 
       // setTimeout(function () {
       //   this.state.start("GameMenu");
